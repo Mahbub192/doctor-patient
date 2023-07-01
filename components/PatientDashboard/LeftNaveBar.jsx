@@ -31,7 +31,7 @@ const LeftNaveBar = () => {
             <p>Name: {user?.displayName}</p>
             <p>Email: {user?.email}</p>
           </div>
-          <div className="mt-3">
+          <div className="mt-3 px-5">
             <List
               sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
               component="nav"
@@ -61,14 +61,14 @@ const LeftNaveBar = () => {
                   <ListItemText primary="Medical Details" />
                 </Link>
               </ListItemButton>
-              <ListItemButton>
+              {/* <ListItemButton>
                 <ListItemIcon>
                   <ReceiptSharpIcon />
                 </ListItemIcon>
                 <Link href={"#"}>
                   <ListItemText primary="Invoices" />
                 </Link>
-              </ListItemButton>
+              </ListItemButton> */}
               <ListItemButton>
                 <ListItemIcon>
                   <AdminPanelSettingsSharpIcon />
@@ -85,14 +85,14 @@ const LeftNaveBar = () => {
                   <ListItemText primary="Change password " />
                 </Link>
               </ListItemButton>
-              <ListItemButton>
+              {/* <ListItemButton>
                 <ListItemIcon>
                   <PowerSettingsNewSharpIcon />
                 </ListItemIcon>
                 <Link href={"#"}>
                   <ListItemText primary="Log Out" />
                 </Link>
-              </ListItemButton>
+              </ListItemButton> */}
             </List>
           </div>
         </div>
