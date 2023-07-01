@@ -36,18 +36,6 @@ const AuthProvider = ({children}) => {
         const unsubscribe = onAuthStateChanged(auth, currentUser =>{
             setUser(currentUser)
             console.log('current user ', currentUser);
-            // if(currentUser){
-            //     console.log('axios email', currentUser.email);
-            //     axios.post('https://summer-camp-server-sigma.vercel.app/jwt', {email: currentUser.email})
-            //     .then(data =>{
-            //         console.log(data.data.token);
-            //         localStorage.setItem('access-token', data.data.token)
-            //         setLoading(false);
-            //     })
-            // }
-            // else{
-            //     localStorage.removeItem('access-token')
-            // }
             setLoading(false)
         });
         return ()=>{

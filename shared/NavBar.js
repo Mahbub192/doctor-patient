@@ -1,10 +1,22 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Avatar from "@mui/material/Avatar";
+import { AuthContext } from "@/providers/AuthProvider";
 
 export default function NavBar() {
+  const { user,logOut } = useContext(AuthContext);
+  console.log('user',user);
   const [navbar, setNavbar] = useState(false);
+  const handelLogout = () => {
+    //todo add notification
+    logOut()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   return (
     <div>
       <Head>
@@ -97,13 +109,14 @@ export default function NavBar() {
             </div>
           </div>
           <div className="flex items-center gap-8">
-          <Avatar
+            <Avatar
               alt="Remy Sharp"
-              src="/static/images/avatar/1.jpg"
+              src={user?.photoURL}
               sx={{ width: 56, height: 56 }}
             />
-            <button className="text-white">Login</button>
-            
+            {user? <button onClick={handelLogout} className="text-white">Log Out</button>: <Link href={`http://localhost:3000/login`}>
+              <button className="text-white">Login</button>
+            </Link>  }
           </div>
         </div>
       </nav>
