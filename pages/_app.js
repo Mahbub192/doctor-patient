@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import "@/styles/featuredproducts.css";
 import AuthProvider from "@/providers/AuthProvider";
 import PrivateRoute from "@/components/PrivateRoute/PrivateRoute";
+import Footer from "@/shared/Footer";
 
 export default function App({ Component, pageProps }) {
   if (Component.getLayout) {
@@ -22,6 +23,7 @@ export default function App({ Component, pageProps }) {
 
         <NavBar />
         <Component {...pageProps} />
+        <Footer />
     </AuthProvider>
   );
 }

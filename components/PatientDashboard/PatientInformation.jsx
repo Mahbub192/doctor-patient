@@ -1,4 +1,7 @@
 import React from "react";
+import Appointment from "./Appointment";
+import Prescriptions from "./Prescriptions";
+import MedicalRecords from "./MedicalRecords";
 
 const TabsComponent = () => {
   const [openTab, setOpenTab] = React.useState(1);
@@ -15,8 +18,8 @@ const TabsComponent = () => {
                 className={
                   "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
                   (openTab === 1
-                    ? "text-red bg-red-500"
-                    : "text-blueGray-600 ")
+                    ? "text-white bg-teal-600"
+                    : "text-blueGray-600 bg-white")
                 }
                 onClick={e => {
                   e.preventDefault();
@@ -26,7 +29,7 @@ const TabsComponent = () => {
                 href="#link1"
                 role="tablist"
               >
-                Profile
+                Appointment
               </a>
             </li>
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -34,7 +37,7 @@ const TabsComponent = () => {
                 className={
                   "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
                   (openTab === 2
-                    ? "text-white bg-blueGray-600"
+                    ? "text-white bg-teal-600"
                     : "text-blueGray-600 bg-white")
                 }
                 onClick={e => {
@@ -45,7 +48,7 @@ const TabsComponent = () => {
                 href="#link2"
                 role="tablist"
               >
-                Settings
+                Prescriptions
               </a>
             </li>
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -53,7 +56,7 @@ const TabsComponent = () => {
                 className={
                   "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
                   (openTab === 3
-                    ? "text-white bg-blueGray-600"
+                    ? "text-white bg-teal-600"
                     : "text-blueGray-600 bg-white")
                 }
                 onClick={e => {
@@ -64,7 +67,26 @@ const TabsComponent = () => {
                 href="#link3"
                 role="tablist"
               >
-                Options
+                Medical Records
+              </a>
+            </li>
+            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <a
+                className={
+                  "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+                  (openTab === 4
+                    ? "text-white bg-teal-600"
+                    : "text-blueGray-600 bg-white")
+                }
+                onClick={e => {
+                  e.preventDefault();
+                  setOpenTab(4);
+                }}
+                data-toggle="tab"
+                href="#link4"
+                role="tablist"
+              >
+                Billing
               </a>
             </li>
           </ul>
@@ -72,29 +94,17 @@ const TabsComponent = () => {
             <div className="px-4 py-5 flex-auto">
               <div className="tab-content tab-space">
                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
-                  <p>
-                    Collaboratively administrate empowered markets via
-                    plug-and-play networks. Dynamically procrastinate B2C users
-                    after installed base benefits.
-                    <br />
-                    <br /> Dramatically visualize customer directed convergence
-                    without revolutionary ROI.
-                  </p>
+                  <Appointment />
                 </div>
                 <div className={openTab === 2 ? "block" : "hidden"} id="link2">
-                  <p>
-                    Completely synergize resource taxing relationships via
-                    premier niche markets. Professionally cultivate one-to-one
-                    customer service with robust ideas.
-                    <br />
-                    <br />
-                    Dynamically innovate resource-leveling customer service for
-                    state of the art customer service.
-                  </p>
+                  <Prescriptions />
                 </div>
                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
+                  <MedicalRecords />
+                </div>
+                <div className={openTab === 4 ? "block" : "hidden"} id="link4">
                   <p>
-                    Efficiently unleash cross-media information without
+                    $$$$$Efficiently unleash cross-media information without
                     cross-media value. Quickly maximize timely deliverables for
                     real-time schemas.
                     <br />

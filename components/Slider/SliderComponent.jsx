@@ -1,160 +1,30 @@
 import dynamic from "next/dynamic";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import EditLocationIcon from "@mui/icons-material/EditLocation";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import LocalAtmIcon from "@mui/icons-material/LocalAtm";
+import { Button, Stack } from "@mui/material";
 let productsp = [
   {
     id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
+    doctor: "Doctor Name",
     url: "products-number-1",
-    price: 100,
   },
   {
     id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
+    doctor: "Doctor Name",
     url: "products-number-1",
-    price: 100,
   },
   {
     id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
+    doctor: "Doctor Name",
     url: "products-number-1",
-    price: 100,
   },
   {
     id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
+    doctor: "Doctor Name",
     url: "products-number-1",
-    price: 100,
-  },
-  {
-    id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
-    url: "products-number-1",
-    price: 100,
-  },
-  {
-    id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
-    url: "products-number-1",
-    price: 100,
-  },
-  {
-    id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
-    url: "products-number-1",
-    price: 100,
-  },
-  {
-    id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
-    url: "products-number-1",
-    price: 100,
-  },
-  {
-    id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
-    url: "products-number-1",
-    price: 100,
-  },
-  {
-    id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
-    url: "products-number-1",
-    price: 100,
-  },
-  {
-    id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
-    url: "products-number-1",
-    price: 100,
-  },
-  {
-    id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
-    url: "products-number-1",
-    price: 100,
-  },
-  {
-    id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
-    url: "products-number-1",
-    price: 100,
-  },
-  {
-    id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
-    url: "products-number-1",
-    price: 100,
-  },
-  {
-    id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
-    url: "products-number-1",
-    price: 100,
-  },
-  {
-    id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
-    url: "products-number-1",
-    price: 100,
-  },
-  {
-    id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
-    url: "products-number-1",
-    price: 100,
-  },
-  {
-    id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
-    url: "products-number-1",
-    price: 100,
-  },
-  {
-    id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
-    url: "products-number-1",
-    price: 100,
-  },
-  {
-    id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
-    url: "products-number-1",
-    price: 100,
-  },
-  {
-    id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
-    url: "products-number-1",
-    price: 100,
-  },
-  {
-    id: 1,
-    name: "Product Number 1",
-    brand: "Brand Name",
-    url: "products-number-1",
-    price: 100,
   },
 ];
 var $ = require("jquery");
@@ -226,35 +96,47 @@ const SliderComponent = () => {
               ? productsp.map((product) => {
                   return (
                     <div className="">
-                    <div
-                      id="featuredProducts"
-                      className="item float-left w-100"
-                      key={product.name}
-                    >
-                      <div className="col-lg-5th col-md-4 col-sm-6 col-xs-12">
-                        <div >
-                          <div className="shadow-2xl   float-left">
-                            <div className="image text-center">
-                              <img
-                                id={"img" + product.id}
-                                src="/product.jpg"
-                                alt="name"
-                                title={product.name}
-                              />
-                            </div>
-                            <div className="flex flex-col  w-100  mt-1 ">
-                              <h5 className="brand text-capitalize float-left">
-                                {product.brand}
-                              </h5>
-                              <span className="name">{product.name}</span>
-                              <strong className="itemPrice p-0">
-                                Price: {product.price}
-                              </strong>
+                      <div
+                        id="featuredProducts"
+                        className="item float-left w-100 border-2 px-2 py-5"
+                        key={product.name}
+                      >
+                        <div className=" col-lg-5th col-md-4 col-sm-6 col-xs-12">
+                          <div className="">
+                            <div className="shadow-2xl  px-2 float-left">
+                              <div className="image text-center">
+                                <img
+                                  id={"img" + product.id}
+                                  src="https://yt3.googleusercontent.com/ytc/AGIKgqPmK1ByzeeLa49q6DJoTKm0_2kTHVXaIpaV25FSYw=s900-c-k-c0x00ffffff-no-rj"
+                                  alt="name"
+                                  title={product.name}
+                                />
+                              </div>
+                              <div className="flex flex-col  w-100  mt-1 ">
+                                <h1 className="text-xl font-bold brand text-capitalize float-left">
+                                  {product.doctor}
+                                </h1>
+                                <h2>Department name</h2>
+                                <p className="text-gray-600 mt-2 flex items-center gap-3">
+                                  <EditLocationIcon /> Dhaka
+                                </p>
+                                <p className="text-gray-600 mt-2 flex items-center gap-3">
+                                  <AccessTimeIcon />
+                                  Available on
+                                </p>
+                                <p className="text-gray-600 mt-2 flex items-center gap-3">
+                                  <LocalAtmIcon />
+                                  600
+                                </p>
+                                <Stack className="mt-5 mb-8" spacing={2} direction="row">
+                                  <Button variant="outlined">Outlined</Button>
+                                  <Button className="bg-sky-700" variant="contained">Contained</Button>
+                                  </Stack>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
                     </div>
                   );
                 })

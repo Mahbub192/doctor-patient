@@ -3,23 +3,22 @@ import { Avatar } from "@mui/material";
 import Link from "next/link";
 import { useContext } from "react";
 
-import * as React from "react";
+import AdminPanelSettingsSharpIcon from "@mui/icons-material/AdminPanelSettingsSharp";
+import AttachFileSharpIcon from "@mui/icons-material/AttachFileSharp";
+import DashboardSharpIcon from "@mui/icons-material/DashboardSharp";
+import KeySharpIcon from "@mui/icons-material/KeySharp";
+import ManageAccountsSharpIcon from "@mui/icons-material/ManageAccountsSharp";
+import PowerSettingsNewSharpIcon from "@mui/icons-material/PowerSettingsNewSharp";
+import ReceiptSharpIcon from "@mui/icons-material/ReceiptSharp";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import DashboardSharpIcon from "@mui/icons-material/DashboardSharp";
-import AttachFileSharpIcon from "@mui/icons-material/AttachFileSharp";
-import ManageAccountsSharpIcon from "@mui/icons-material/ManageAccountsSharp";
-import ReceiptSharpIcon from "@mui/icons-material/ReceiptSharp";
-import PowerSettingsNewSharpIcon from "@mui/icons-material/PowerSettingsNewSharp";
-import AdminPanelSettingsSharpIcon from "@mui/icons-material/AdminPanelSettingsSharp";
-import KeySharpIcon from "@mui/icons-material/KeySharp";
 
 const LeftNaveBar = () => {
     const { user } = useContext(AuthContext);
     return (
-      <div>
+      <div className=" h-full border-2 shadow-2xl ">
         <div className="">
           <Avatar
             alt="Remy Sharp"
@@ -41,7 +40,7 @@ const LeftNaveBar = () => {
                 <ListItemIcon>
                   <DashboardSharpIcon />
                 </ListItemIcon>
-                <Link href={"#"}>
+                <Link href={"http://localhost:3001/patient"}>
                   <ListItemText primary="Dashboard" />
                 </Link>
               </ListItemButton>
@@ -49,7 +48,7 @@ const LeftNaveBar = () => {
                 <ListItemIcon>
                   <AttachFileSharpIcon />
                 </ListItemIcon>
-                <Link href={"#"}>
+                <Link href={"http://localhost:3001/patient/AddMedicalRecord"}>
                   <ListItemText primary="Add medical Records" />
                 </Link>
               </ListItemButton>
@@ -61,14 +60,14 @@ const LeftNaveBar = () => {
                   <ListItemText primary="Medical Details" />
                 </Link>
               </ListItemButton>
-              {/* <ListItemButton>
+              <ListItemButton>
                 <ListItemIcon>
                   <ReceiptSharpIcon />
                 </ListItemIcon>
                 <Link href={"#"}>
                   <ListItemText primary="Invoices" />
                 </Link>
-              </ListItemButton> */}
+              </ListItemButton>
               <ListItemButton>
                 <ListItemIcon>
                   <AdminPanelSettingsSharpIcon />
@@ -85,14 +84,14 @@ const LeftNaveBar = () => {
                   <ListItemText primary="Change password " />
                 </Link>
               </ListItemButton>
-              {/* <ListItemButton>
+              <ListItemButton>
                 <ListItemIcon>
                   <PowerSettingsNewSharpIcon />
                 </ListItemIcon>
                 <Link href={"#"}>
                   <ListItemText primary="Log Out" />
                 </Link>
-              </ListItemButton> */}
+              </ListItemButton>
             </List>
           </div>
         </div>

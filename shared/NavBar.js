@@ -86,7 +86,7 @@ export default function NavBar() {
                   </Link>
                 </li>
                 <li className="text-white">
-                  <Link href="/">
+                  <Link href="http://localhost:3001/patient">
                     <p>Patient</p>
                   </Link>
                 </li>
