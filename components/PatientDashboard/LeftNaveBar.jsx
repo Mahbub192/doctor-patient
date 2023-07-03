@@ -40,7 +40,7 @@ const LeftNaveBar = () => {
                 <ListItemIcon>
                   <DashboardSharpIcon />
                 </ListItemIcon>
-                <Link href={"http://localhost:3001/patient"}>
+                <Link href={"http://localhost:3000/patient/PatientHome"}>
                   <ListItemText primary="Dashboard" />
                 </Link>
               </ListItemButton>
@@ -48,7 +48,7 @@ const LeftNaveBar = () => {
                 <ListItemIcon>
                   <AttachFileSharpIcon />
                 </ListItemIcon>
-                <Link href={"http://localhost:3001/patient/AddMedicalRecord"}>
+                <Link href={"http://localhost:3000/patient/AddMedicalRecord"}>
                   <ListItemText primary="Add medical Records" />
                 </Link>
               </ListItemButton>
@@ -64,7 +64,7 @@ const LeftNaveBar = () => {
                 <ListItemIcon>
                   <ReceiptSharpIcon />
                 </ListItemIcon>
-                <Link href={"#"}>
+                <Link href={"http://localhost:3000/patient/Invoice"}>
                   <ListItemText primary="Invoices" />
                 </Link>
               </ListItemButton>

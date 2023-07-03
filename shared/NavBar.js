@@ -3,10 +3,10 @@ import Link from "next/link";
 import { useContext, useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import { AuthContext } from "@/providers/AuthProvider";
+import dynamic from "next/dynamic";
 
-export default function NavBar() {
+const NavBar = ()=> {
   const { user,logOut } = useContext(AuthContext);
-  console.log('user',user);
   const [navbar, setNavbar] = useState(false);
   const handelLogout = () => {
     //todo add notification
@@ -86,7 +86,7 @@ export default function NavBar() {
                   </Link>
                 </li>
                 <li className="text-white">
-                  <Link href="http://localhost:3001/patient">
+                  <Link href="http://localhost:3000/patient/PatientHome">
                     <p>Patient</p>
                   </Link>
                 </li>
@@ -123,3 +123,5 @@ export default function NavBar() {
     </div>
   );
 }
+
+export default dynamic(()=>Promise.resolve(NavBar),{ssr:false})

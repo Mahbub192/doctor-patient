@@ -4,7 +4,7 @@ import PatientInformation from "../../components/PatientDashboard/PatientInforma
 const PatientDashboard = () => {
   return (
     <div className="flex flex-wrap">
-      <div className="w-1/5 ">
+      <div className="w-1/5 h-screen">
         <LeftNaveBar />
       </div>
       <div className="w-4/5">
