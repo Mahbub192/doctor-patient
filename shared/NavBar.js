@@ -81,7 +81,7 @@ const NavBar = ()=> {
                   </Link>
                 </li>
                 <li className="text-white">
-                  <Link href="/">
+                  <Link href="http://localhost:3000/doctor/DoctorHome">
                     <p>Doctor</p>
                   </Link>
                 </li>

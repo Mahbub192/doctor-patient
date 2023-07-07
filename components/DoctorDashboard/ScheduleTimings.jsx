@@ -1,32 +1,135 @@
-import PlaceIcon from "@mui/icons-material/Place";
 import * as React from "react";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
-import Link from "next/link";
 
-const index = () => {
-  const [openTab, setOpenTab] = React.useState(1);
+
+const ScheduleTimings = () => {
+    const [openTab, setOpenTab] = React.useState(1);
+  const [minute, setMinute] = React.useState("");
+  const [minuteOpen, setMinuteOpen] = React.useState(false);
+  const [day, setDay] = React.useState("");
+  const [dayOpen, setDayOpen] = React.useState(false);
+  const handleChange = (event) => {
+    setMinute(event.target.value);
+  };
+
+  const handleClose = () => {
+    setMinuteOpen(false);
+  };
+
+  const handleOpen = () => {
+    setMinuteOpen(true);
+  };
+  const handleChangeDay = (event) => {
+    setDay(event.target.value);
+  };
+
+  const handleCloseDay = () => {
+    setDayOpen(false);
+  };
+
+  const handleOpenDay = () => {
+    setDayOpen(true);
+  };
+
   return (
-    <div className="w-9/12 mx-auto my-16 md:my-20 border-2 px-5 py-10 shadow-2xl">
-      <div className="flex gap-6 items-center">
-        <img
-          src="https://yt3.googleusercontent.com/ytc/AGIKgqPmK1ByzeeLa49q6DJoTKm0_2kTHVXaIpaV25FSYw=s900-c-k-c0x00ffffff-no-rj"
-          alt=""
-          height={100}
-          width={100}
-        />
-        <div>
-          <h2 className="text-lg">Doctor Name: </h2>
-          <p className="text-gray-500 pt-2">
-            <span>
-              <PlaceIcon />
-            </span>{" "}
-            Mirpur-10, Dhaka
-          </p>
+    <div className="">
+      <div className="mt-10">
+        <h1 className="text-xl font-bold">Schedule Timings</h1>
+        <div className="flex flex-wrap">
+          <div className="">
+            <Button sx={{ display: "block", mt: 2 }} onClick={handleOpen}>
+              Timing Slot Duration
+            </Button>
+            <FormControl sx={{ m: 1, minWidth: 320 }}>
+              <InputLabel id="demo-controlled-open-select-label">
+                Minutes
+              </InputLabel>
+              <Select
+                labelId="demo-controlled-open-select-label"
+                id="demo-controlled-open-select"
+                open={minuteOpen}
+                onClose={handleClose}
+                onOpen={handleOpen}
+                value={minute}
+                label="Minutes"
+                onChange={handleChange}
+              >
+                <MenuItem value="">
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={10}>10</MenuItem>
+                <MenuItem value={20}>15</MenuItem>
+                <MenuItem value={30}>20</MenuItem>
+              </Select>
+            </FormControl>
+          </div>
+          <div>
+            <Button sx={{ display: "block", mt: 2 }} onClick={handleOpenDay}>
+              Select Day
+            </Button>
+            <FormControl sx={{ m: 1, minWidth: 320 }}>
+              <InputLabel id="demo-controlled-open-select-label">
+                Select Day
+              </InputLabel>
+              <Select
+                labelId="demo-controlled-open-select-label"
+                id="demo-controlled-open-select"
+                open={dayOpen}
+                onClose={handleCloseDay}
+                onOpen={handleOpenDay}
+                value={day}
+                label="Select Day"
+                onChange={handleChangeDay}
+              >
+                <MenuItem value="">
+                  <em>None</em>
+                </MenuItem>
+                <MenuItem value={"Sunday"}>Sunday</MenuItem>
+                <MenuItem value={"Monday"}>Monday</MenuItem>
+                <MenuItem value={"Tuesday"}>Tuesday</MenuItem>
+                <MenuItem value={"Wednesday"}>Wednesday</MenuItem>
+                <MenuItem value={"Thursday"}>Thursday</MenuItem>
+                <MenuItem value={"Friday"}>Friday</MenuItem>
+                <MenuItem value={"Saturday"}>Saturday</MenuItem>
+              </Select>
+            </FormControl>
+          </div>
         </div>
+      </div>
+      <div className="mt-10">
+        <h1 className="text-xl font-bold ">Available Time</h1>
+        <div>
+          <Box
+            component="form"
+            sx={{
+              "& > :not(style)": { m: 1, width: "32ch" },
+            }}
+            noValidate
+            autoComplete="off"
+          >
+            <TextField
+              label="Start Time"
+              variant="outlined"
+            />
+            <TextField
+              label="End Time"
+              variant="outlined"
+            />
+          </Box>
+        </div>
+      </div>
+      <div className="text-center mb-5">
+        <button className="text-white bg-gray-800 hover:bg-sky-400 text-lg px-8 py-2 rounded-md mt-8">Save</button>
       </div>
       <div>
         <div className="flex flex-wrap">
@@ -183,38 +286,35 @@ const index = () => {
                     className={openTab === 1 ? "block" : "hidden"}
                     id="link1"
                   >
-                    <div className="flex flex-col">
-                      <FormControl>
-                        <FormLabel id="demo-radio-buttons-group-label">
-                          Time
-                        </FormLabel>
-                        <RadioGroup
-                          aria-labelledby="demo-radio-buttons-group-label"
-                          defaultValue="female"
-                          name="radio-buttons-group"
-                        >
-                          <FormControlLabel
-                            value="6:30 - 7:00 Pm"
-                            control={<Radio />}
-                            label="6:30 - 7:00 Pm"
-                          />
-                          <FormControlLabel
-                            value="7:00 - 7:30 Pm"
-                            control={<Radio />}
-                            label="7:00 - 7:30 Pm"
-                          />
-                          <FormControlLabel
-                            value="7:30 - 8:00 Pm"
-                            control={<Radio />}
-                            label="7:30 - 8:00 Pm"
-                          />
-                        </RadioGroup>
-                      </FormControl>
-                      <Link href={`http://localhost:3000/patient/Checkout`}>
-                        <button className="bg-gray-800 text-white hover:bg-sky-300 px-5 py-3 rounded-md w-36 mt-10">
-                          Submit
-                        </button>
-                      </Link>
+                    <div>
+                    <FormControl>
+                      <FormLabel id="demo-radio-buttons-group-label">
+                        Time
+                      </FormLabel>
+                      <RadioGroup
+                        aria-labelledby="demo-radio-buttons-group-label"
+                        defaultValue="female"
+                        name="radio-buttons-group"
+                        className="grid grid-cols-6"
+                      >
+                        <FormControlLabel
+                          value="6:30 - 7:00 Pm"
+                          control={<Radio />}
+                          label="6:30 - 7:00 Pm"
+                        />
+                        <FormControlLabel
+                          value="7:00 - 7:30 Pm"
+                          control={<Radio />}
+                          label="7:00 - 7:30 Pm"
+                        />
+                        <FormControlLabel
+                          value="7:30 - 8:00 Pm"
+                          control={<Radio />}
+                          label="7:30 - 8:00 Pm"
+                        />
+                      </RadioGroup>
+                    </FormControl>
+                    
                     </div>
                   </div>
                   <div
@@ -270,4 +370,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default ScheduleTimings;

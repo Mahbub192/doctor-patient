@@ -5,6 +5,7 @@ import EditLocationIcon from "@mui/icons-material/EditLocation";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import { Button, Stack } from "@mui/material";
+import Link from "next/link";
 let productsp = [
   {
     id: 1,
@@ -128,10 +129,17 @@ const SliderComponent = () => {
                                   <LocalAtmIcon />
                                   600
                                 </p>
-                                <Stack className="mt-5 mb-8" spacing={2} direction="row">
-                                  <Button variant="outlined">Outlined</Button>
-                                  <Button className="bg-sky-700" variant="contained">Contained</Button>
-                                  </Stack>
+                                <Stack
+                                  className="mt-5 mb-8"
+                                  spacing={2}
+                                  direction="row"
+                                >
+                                  <Link
+                                    href={`http://localhost:3000/patient/Booking`}
+                                  >
+                                    <Button variant="outlined">Book Now</Button>
+                                  </Link>
+                                </Stack>
                               </div>
                             </div>
                           </div>

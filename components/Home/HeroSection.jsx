@@ -41,9 +41,9 @@ const HeroSection = () => {
                 label="Specialist"
                 onChange={handleChange}
               >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                <MenuItem value={10}>Neurology</MenuItem>
+                <MenuItem value={20}>Orthopedic</MenuItem>
+                <MenuItem value={30}>Dentist</MenuItem>
               </Select>
             </FormControl>
             <TextField
