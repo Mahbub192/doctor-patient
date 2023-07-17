@@ -60,14 +60,14 @@ const DoctorLeftNaveBar = () => {
                   <ListItemText primary="Schedule Timings" />
                 </Link>
               </ListItemButton>
-              <ListItemButton>
+              {/* <ListItemButton>
                 <ListItemIcon>
                   <ReceiptSharpIcon />
                 </ListItemIcon>
                 <Link href={"http://localhost:3000/patient/Invoice"}>
                   <ListItemText primary="Invoices" />
                 </Link>
-              </ListItemButton>
+              </ListItemButton> */}
               <ListItemButton>
                 <ListItemIcon>
                   <AdminPanelSettingsSharpIcon />

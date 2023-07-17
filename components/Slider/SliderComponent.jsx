@@ -1,11 +1,11 @@
-import dynamic from "next/dynamic";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
-import EditLocationIcon from "@mui/icons-material/EditLocation";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import EditLocationIcon from "@mui/icons-material/EditLocation";
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import { Button, Stack } from "@mui/material";
+import dynamic from "next/dynamic";
 import Link from "next/link";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 let productsp = [
   {
     id: 1,
@@ -94,9 +94,9 @@ const SliderComponent = () => {
             {...options}
           >
             {productsp && productsp.length > 0
-              ? productsp.map((product) => {
+              ? productsp.map((product, index) => {
                   return (
-                    <div className="">
+                    <div key={index} className="">
                       <div
                         id="featuredProducts"
                         className="item float-left w-100 border-2 px-2 py-5"
